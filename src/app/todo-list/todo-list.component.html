@@ -1,0 +1,9 @@
+<div class="container">
+    <label for="">Please enter todo
+        <input type="text" placeholder="Enter Todo" class="block" #newTodo>
+        <button (click)="add(newTodo.value)">Add</button>
+    </label>
+    <ul *ngFor="let todo of todos">
+        <li class="flex">{{todo}} <button (click)="removeTodo(todo)">delete</button></li>
+    </ul>
+</div>

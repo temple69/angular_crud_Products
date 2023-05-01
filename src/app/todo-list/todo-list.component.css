@@ -1,0 +1,13 @@
+.container {
+    background-color: red;
+    height: 50vh;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.block {
+    display: block;
+}
