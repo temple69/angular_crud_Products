@@ -1,0 +1,28 @@
+<section class="container mb-5">
+    <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
+        <div class="mb-3 ">
+            <label for="exampleFormControlInput1" class="form-label ">Product name</label>
+            <input type="email " class="form-control " id="exampleFormControlInput1 " placeholder="Iphone 13" formControlName="name">
+        </div>
+        <div class="mb-3 ">
+            <label for="exampleFormControlTextarea1 " class="form-label ">Product Price</label>
+            <input type="number" class="form-control" placeholder=" (in $) " formControlName="price" />
+        </div>
+        <div class="mb-3 ">
+            <label for="exampleFormControlTextarea1 " class="form-label ">Product ImageAddress</label>
+            <input type="image " alt=" " class="form-control" formControlName="imgUrl">
+        </div>
+        <div class=" mb-3 ">
+            <label for="exampleFormControlTextarea1 " class="form-label ">Product Description</label>
+            <textarea class="form-control noResize " id="exampleFormControlTextarea1 " rows="3 " formControlName="description" placeholder="Releasesd in 2020 "></textarea>
+        </div>
+
+
+
+        <article class="article ">
+            <button class=" btn btn-outline-success button ">Create Product</button>
+        </article>
+
+    </form>
+
+</section>

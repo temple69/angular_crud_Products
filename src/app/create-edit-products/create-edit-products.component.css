@@ -1,0 +1,14 @@
+.article {
+    display: flex;
+    justify-content: center;
+}
+
+.article button {
+    width: 60%;
+    height: 50px;
+}
+
+.noResize {
+    resize: none;
+    height: 150px;
+}
