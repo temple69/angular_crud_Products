@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { ProductsService } from '../products.service';
+import { ProductsService } from '../service/products.service';
 import { v4 as uuidv4 } from 'uuid';
-import { ProductsList } from '../products';
+import { ProductsList } from '../service/products';
 
 @Component({
   selector: 'app-create-edit-products',
