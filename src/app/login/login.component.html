@@ -1,0 +1,17 @@
+<section class="container mb-5">
+    <form [formGroup]="loginFormValues" (ngSubmit)="Login()">
+        <div class="mb-3 ">
+            <label for="exampleFormControlTextarea1 " class="form-label ">UserName</label>
+            <input type="number " class="form-control " placeholder="temple69" formControlName="UserName" />
+        </div>
+        <div class="mb-3 ">
+            <label for="exampleFormControlTextarea1 " class="form-label ">Password</label>
+            <input type="password" alt=" " class="form-control" formControlName="password">
+        </div>
+        <article class="article ">
+            <button class=" btn btn-outline-primary button">Login</button>
+        </article>
+
+    </form>
+
+</section>
