@@ -1,30 +1,24 @@
 <section class="container">
 
+
     <div class="row">
-        <div class="card col-4">
-            <img src="... " class="card-img-top " alt="... ">
-            <article class="card-body ">
-                <h5 class="card-title ">Card title</h5>
-                <p class="card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="# " class="btn btn-primary ">Go somewhere</a>
-            </article>
-        </div>
-        <div class='card col-4'>
+        <div class="card col-4" *ngFor="let product of products">
             <img src=" ... " class="card-img-top " alt="... ">
             <article class="card-body ">
-                <h5 class="card-title ">Card title</h5>
-                <p class="card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="# " class="btn btn-primary ">Go somewhere</a>
+                <h5 class="card-title ">{{product.productName}}</h5>
+                <p class="card-text ">{{product.description}}</p>
+                <button class=" btn btn-primary" [routerLink]="['/products',product.id]">View Product Details</button>
             </article>
-        </div>
-        <div class='card col-4'>
-            <img src=" ... " class="card-img-top " alt="... ">
-            <article class="card-body ">
-                <h5 class="card-title ">Card title</h5>
-                <p class="card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="# " class="btn btn-primary ">Go somewhere</a>
+            <article class="flex">
+                <button (click)="deleteProduct(product.id!)" class="btn btn-outline-danger mx-4">deleteProduct</button>
+                <a class="btn btn-outline-info " [routerLink]="['/editProduct',product.id]">EditProduct</a>
+
             </article>
+
         </div>
+
+
+
 
 
 
