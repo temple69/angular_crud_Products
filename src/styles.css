@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
-.red {
-    background-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.article {
+    display: flex;
+    justify-content: center;
+}
+
+.article button {
+    width: 60%;
+    height: 50px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
 }
