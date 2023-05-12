@@ -1,28 +1,21 @@
-<section class="container">
+<app-modal>
+</app-modal>
+<section class="autoGrid">
 
+    <div class="card shadow" *ngFor="let product of products">
+        <article class="flex" *ngIf=" isUserAuthenticated">
+            <button (click)="deleteProduct(product.id!)" class="btn btn-danger ">deleteProduct</button>
+            <a class="btn btn-outline-info " [routerLink]="['/editProduct',product.id]">EditProduct</a>
 
-    <div class="row">
-        <div class="card col-4" *ngFor="let product of products">
-            <img src=" ... " class="card-img-top " alt="... ">
-            <article class="card-body ">
-                <h5 class="card-title ">{{product.productName}}</h5>
-                <p class="card-text ">{{product.description}}</p>
-                <button class=" btn btn-primary" [routerLink]="['/products',product.id]">View Product Details</button>
-            </article>
-            <article class="flex">
-                <button (click)="deleteProduct(product.id!)" class="btn btn-outline-danger mx-4">deleteProduct</button>
-                <a class="btn btn-outline-info " [routerLink]="['/editProduct',product.id]">EditProduct</a>
+        </article>
+        <img src="{{product.imgUrl}}" class="card-img-top" alt="{{product.productName}}" loading="lazy">
+        <article class="">
+            <h3 class="card-title">{{product.productName}}</h3>
+            <h5 class="card-text">${{product.price}}</h5>
 
-            </article>
-
-        </div>
-
-
-
-
+        </article>
+        <button class="btn btn-outline-primary" [routerLink]="['/products',product.id]">View Product Details</button>
 
 
     </div>
-
-
 </section>
