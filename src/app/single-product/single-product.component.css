@@ -1,0 +1,29 @@
+.autoGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 3em;
+}
+
+.shadow {
+    box-shadow: 2px 2px 4px 2px white;
+    background-color: white;
+    aspect-ratio: auto;
+    padding: 1em;
+}
+
+.shadow>img {
+    width: 100%;
+    height: 30vh;
+    object-fit: contain;
+}
+
+.shadow>article {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.shadow>button {
+    position: sticky;
+    top: 90%;
+    width: 100%;
+}

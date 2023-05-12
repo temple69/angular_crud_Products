@@ -21,9 +21,11 @@ export class SingleProductComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params=>{
       const id =params.get('productId')!
-      const single= this.singleService.products.filter(prod=>prod.id==id)
-      const [Productobj]= single
-      this.product= Productobj
+      this.singleService.getSingleProduct(id).subscribe(productData=>{
+        this.product=productData.product
+
+      })
+    
     })
       
   }
