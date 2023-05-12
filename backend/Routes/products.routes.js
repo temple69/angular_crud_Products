@@ -1,0 +1,10 @@
+const express = require("express");
+const checkIfUserIsAuthenticated = require("../middleware/AuthChecker");
+const { CreateProduct, getAllProducts, getSingleProduct, deleteSingleProduct, UpdateSingleProduct } = require("../Controller/Products.controller");
+const router = express.Router();
+router.post("/", CreateProduct);
+router.get("/", getAllProducts);
+router.get("/:singleProductId", getSingleProduct);
+router.put("/:id", checkIfUserIsAuthenticated, UpdateSingleProduct);
+router.delete("/:id", checkIfUserIsAuthenticated, deleteSingleProduct);
+module.exports = router;
