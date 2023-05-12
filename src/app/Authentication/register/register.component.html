@@ -1,0 +1,44 @@
+<section class="container mb-5">
+    <app-modal></app-modal>
+    <form [formGroup]="registerFormValues" (ngSubmit)="CreateAccount()">
+        <div class=" mb-3 ">
+            <label for="exampleFormControlInput1 " class="form-label ">UserName</label>
+            <input type="email " class="form-control " id="exampleFormControlInput1 " placeholder="John Doe" formControlName="userName" [ngClass]="{ 'is-invalid': submitted && f['userName'].errors }">
+            <div *ngIf="submitted && f['userName'].errors" class="invalid-feedback">
+                <div *ngIf="f['userName'].errors['required']">Username is required</div>
+                <div *ngIf="f['userName'].errors['minlength']">
+                    Username must be at least 8characters
+                </div>
+                <div *ngIf="f['userName'].errors['maxlength']">
+                    Username must not exceed 20 characters
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 ">
+            <label for="exampleFormControlTextarea1 " class="form-label ">Email</label>
+            <input type="email" class="form-control " placeholder="JohnDoe@gmail.com" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors['required']" class="text-danger">Email is required</div>
+                <div *ngIf="f['email'].errors[ 'email'] ">Email is invalid</div>
+            </div>
+        </div>
+        <div class="mb-3 ">
+            <label for="exampleFormControlTextarea1 " class="form-label ">Password</label>
+            <input type="password" alt=" " class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors['required']">Password is required</div>
+                <div *ngIf="f['password'].errors['minlength']">
+                    Password must be at least 6 characters
+                </div>
+                <div *ngIf="f['password'].errors['maxlength']">
+                    Password must not exceed 20 characters
+                </div>
+            </div>
+        </div>
+        <article class="article ">
+            <button class=" btn btn-outline-primary button">Create Account</button>
+        </article>
+
+    </form>
+
+</section>
