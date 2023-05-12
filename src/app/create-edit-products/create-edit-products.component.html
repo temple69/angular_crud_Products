@@ -1,20 +1,57 @@
 <section class="container mb-5">
+    <!-- <app-modal></app-modal> -->
+
+
+
     <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
         <div class="mb-3 ">
             <label for="exampleFormControlInput1" class="form-label ">Product name</label>
-            <input type="email " class="form-control " id="exampleFormControlInput1 " placeholder="Iphone 13" formControlName="productName">
+            <input type="email " class="form-control " id="exampleFormControlInput1 " placeholder="Iphone 13" formControlName="productName" [ngClass]="{ 'is-invalid': submitted && f['productName'].errors }">
+            <div *ngIf="submitted && f['productName'].errors" class="invalid-feedback">
+                <div *ngIf="f['productName'].errors['required']">ProductName is required</div>
+                <div *ngIf="f['productName'].errors['minlength']">
+                    ProductName must be at least 3 characters
+                </div>
+                <div *ngIf="f['productName'].errors['maxlength']">
+                    Product must not exceed 20 characters
+                </div>
+            </div>
         </div>
         <div class="mb-3 ">
             <label for="exampleFormControlTextarea1 " class="form-label ">Product Price</label>
-            <input type="number" class="form-control" placeholder=" (in $) " formControlName="price" />
+            <input type="number" class="form-control" placeholder=" (in $) " formControlName="price" [ngClass]="{ 'is-invalid': submitted && f['price'].errors }" />
+            <div *ngIf="submitted && f['price'].errors" class="invalid-feedback">
+                <div *ngIf="f['price'].errors['required']">Product Price is required</div>
+                <div *ngIf="f['price'].errors['minlength']">
+                    Product Price must be at least 1 characters
+                </div>
+                <div *ngIf="f['price'].errors['maxlength']">
+                    Product Price must not exceed 6 characters
+                </div>
+            </div>
         </div>
         <div class="mb-3 ">
             <label for="exampleFormControlTextarea1 " class="form-label ">Product ImageAddress</label>
-            <input type="image " alt=" " class="form-control" formControlName="imgUrl">
+            <input type="search" alt=" " class="form-control" formControlName="imgUrl" [ngClass]="{ 'is-invalid': submitted && f['imgUrl'].errors }">
+            <div *ngIf="submitted && f['imgUrl'].errors" class="invalid-feedback">
+                <div *ngIf="f['imgUrl'].errors['required']">Product image Address is required</div>
+                <div *ngIf="f['imgUrl'].errors['pattern']">
+                    The url address must start with http or https and end with supported image formats(.jpg|.jpeg |.png,|.svg)
+                </div>
+            </div>
         </div>
         <div class=" mb-3 ">
             <label for="exampleFormControlTextarea1 " class="form-label ">Product Description</label>
-            <textarea class="form-control noResize " id="exampleFormControlTextarea1 " rows="3 " formControlName="description" placeholder="Releasesd in 2020 "></textarea>
+            <textarea class="form-control noResize " id="exampleFormControlTextarea1 " rows="3 " formControlName="description" placeholder="Releasesd in 2020" [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"></textarea>
+            <div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
+                <div *ngIf="f['description'].errors['required']">Product Description is required</div>
+                <div *ngIf="f['description'].errors['minlength']">
+                    Product Description must be at least 6 characters
+                </div>
+                <div *ngIf="f['description'].errors['maxlength']">
+                    Product Description must not exceed 90 characters
+                </div>
+            </div>
         </div>
         <article class="article ">
             <button class=" btn btn-outline-success button ">{{editMode?'Update Product':'Create Product'}}</button>
