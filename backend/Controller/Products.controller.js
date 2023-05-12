@@ -1,7 +1,6 @@
-const { getProducts } = require("../data");
 const ProductsModel = require("../models/Products.model");
 //Function that creates Products and stores into database
-const axios = require("axios");
+
 
 const CreateProduct = async(req, res) => {
     const product = req.body;
