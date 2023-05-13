@@ -35,11 +35,11 @@ export class ProductsService {
       });
   }
   getSingleProduct(id: string) {
-    return { ...this.products.find((prod) => prod.id === id) };
+    return this.http.get<{message:string,product:ProductsList}>(`http://localhost:3000/api/products/${id}`)
   }
   updateProduct(product: ProductsList) {
     const { id } = product;
-    console.log(id);
+  
     this.http
       .put<{ message: string; updatedProduct: ProductsList }>(
         `http://localhost:3000/api/products/${id}`,
@@ -47,6 +47,11 @@ export class ProductsService {
       )
       .subscribe((response) => {
         console.log(response);
+        const updatedProducts=[...this.products]
+        const oldProductIndex=updatedProducts.findIndex((prod)=>prod.id=== id)
+        updatedProducts[oldProductIndex]=product
+        this.products= updatedProducts;
+        this.ProductsUpdated.next([...this.products])
       });
   }
 
@@ -64,6 +69,7 @@ export class ProductsService {
         this.ProductsUpdated.next([...this.products]);
       });
   }
+  //This function get Updated Products
   getProductsUpdated() {
     return this.ProductsUpdated.asObservable();
   }
