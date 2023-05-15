@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Clone the project using git clone command and the project repository like this `git clone https://github.com/temple69/angular_crud_Products.git` on your command prompt
 * After Cloning navigate to the project directory and run npm install Command Which will install Dependencies
 * After running npm install command Run  `ng serve --open` for a  frontend dev server the open flag will automatically open a new browser window and initialize the application.
-* To startup the backend server type `npm run start:server` into your command prompt the backend server will be running on `localhost:3000`.
+* To startup the backend server change directory to the root folder and type `npm run start:server` into your command prompt the backend server will be running on `localhost:3000`.
 * If Connection is Successful You should see message on the command prompt terminal saying `Connected to Database`.
 * Congratulations the project is now running locally on your machine.
 * `NB:All Commands are to be run in the command prompt`
