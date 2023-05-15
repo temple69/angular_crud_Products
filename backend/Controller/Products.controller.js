@@ -59,7 +59,7 @@ const getAllProducts = async(req, res) => {
 };
 //Function that gets single product by id from database
 const getSingleProduct = async(req, res, next) => {
-    console.log(req.params.singleProductId);
+
     try {
         const product = await ProductsModel.findById(req.params.singleProductId);
         if (product) {
