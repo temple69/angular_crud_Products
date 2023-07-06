@@ -2,7 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 ## Running Project On Local Machine
-* Fork the repository ` NB:this is optional`
 * Clone the project using git clone command and the project repository like this `git clone https://github.com/temple69/angular_crud_Products.git` on your command prompt
 * After Cloning navigate to the project directory and run npm install Command Which will install Dependencies
 * After running npm install command Run  `ng serve --open` for a  frontend dev server the open flag will automatically open a new browser window and initialize the application.
