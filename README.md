@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * To startup the backend server change directory to the root folder and type `npm run start:server` into your command prompt the backend server will be running on `localhost:3000`.
 * If Connection is Successful You should see message on the command prompt terminal saying `Connected to Database`.
 * Congratulations the project is now running locally on your machine.
-* `NB:All Commands are to be run in the command prompt`
+* `NB:All Commands are to be run in the command prompt or terminal`
 
 
 ## Development server
